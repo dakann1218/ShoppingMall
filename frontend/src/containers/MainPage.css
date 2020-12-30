@@ -1,0 +1,81 @@
+body {
+    background: pink;
+    width : 1200px
+}
+
+.MainPage .Header{
+    background: white;
+
+    display: flex;    
+    flex-direction: column;
+    
+    height:150px;
+    margin: 0px;
+
+}
+
+.MainPage .Header h1{
+    flex: 4;
+
+    text-align: center;
+
+    font-size: 40px;
+}
+.MainPage .Header .Menu{
+    flex: 1;
+    display: flex;
+    justify-content: flex-end;
+    margin: 5px;
+    padding: 5px;
+}
+.MainPage .Header a{
+    margin: auto 10px;
+    padding: 2px 10px;
+
+    border-radius: 4px;
+    background: pink;
+    
+    text-decoration: none;
+    color: black;
+    font-size: 12px;
+    font-weight: bold;
+}
+
+.MainPage .Category{
+    display: flex;
+
+    height: 30px;
+    background: white;
+    border: 3px solid black;
+    justify-content: space-evenly;
+
+}
+
+.MainPage .Category a{
+    flex: 1;
+    text-align: center;
+    text-decoration: none;
+    border: 1px solid black;
+    font-weight: bold;
+    color: black;
+
+}
+.MainPage .Items{
+
+    width: 1000px;
+    height: 400px;
+    margin: auto;
+
+    display: flex;
+    justify-content: space-around;
+
+}
+.MainPage .Items img{
+
+    border: 5px solid darksalmon;
+    border-radius: 5px;
+    width: 300px;
+    height: 300px;
+    margin: auto;
+
+}

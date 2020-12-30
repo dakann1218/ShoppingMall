@@ -1,0 +1,19 @@
+{
+  "name": "shoppingmall",
+  "version": "1.0.0",
+  "description": "JaeJoon and DarDek Mall",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/dakann1218/ShoppingMall.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/dakann1218/ShoppingMall/issues"
+  },
+  "homepage": "https://github.com/dakann1218/ShoppingMall#readme"
+}
