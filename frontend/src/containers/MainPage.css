@@ -1,6 +1,12 @@
-body {
+body{
     background: pink;
-    width : 1200px
+}
+.MainPage {
+    display: flex;
+
+    flex-direction: column;
+    align-items: center;
+    width: 1980px;
 }
 
 .MainPage .Header{
@@ -17,8 +23,9 @@ body {
 .MainPage .Header h1{
     flex: 4;
 
-    text-align: center;
+    width: 1980px;
 
+    text-align: center;
     font-size: 40px;
 }
 .MainPage .Header .Menu{
@@ -28,14 +35,14 @@ body {
     margin: 5px;
     padding: 5px;
 }
-.MainPage .Header a{
+.MainPage .Header button{
     margin: auto 10px;
     padding: 2px 10px;
 
+    border: 3px solid darksalmon;
     border-radius: 4px;
     background: pink;
     
-    text-decoration: none;
     color: black;
     font-size: 12px;
     font-weight: bold;
@@ -44,28 +51,43 @@ body {
 .MainPage .Category{
     display: flex;
 
+    box-sizing: border-box;
+    width: 1980px;
     height: 30px;
+
     background: white;
     border: 3px solid black;
     justify-content: space-evenly;
 
 }
 
-.MainPage .Category a{
+.MainPage .Category button{
     flex: 1;
-    text-align: center;
-    text-decoration: none;
+
     border: 1px solid black;
+    background: white;
+
+    text-align: center;
     font-weight: bold;
     color: black;
+}
 
+.MainPage .BestChoice{
+    width: 1980px;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.MainPage .BestChoice{
+    margin: 100px 0px auto;
 }
 .MainPage .Items{
 
     width: 1000px;
     height: 400px;
     margin: auto;
-
     display: flex;
     justify-content: space-around;
 

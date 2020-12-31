@@ -6,7 +6,7 @@ import LogIn from './containers/LogIn'
 import SignUp from './containers/SignUp'
 import MyPage from './containers/MyPage'
 import QnA from './containers/QnA'
-
+import Item from './containers/Item'
 
 
 
@@ -21,21 +21,9 @@ function App() {
       <Route path = '/signup' exact component = { SignUp }  />
       <Route path = '/mypage' exact component = { MyPage } />
       <Route path = '/qna' exact component = { QnA } />
+      <Route path = '/item' exact component = { Item }/>
       <Redirect exact from = '/' to = '/main' />
       <Route render = {()=> <h1>Not Found</h1>}/>
-      
-
-
-
-
-
-
-
-
-
-
-
-      
       </Switch>
     </div>
     </BrowserRouter>

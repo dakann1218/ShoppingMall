@@ -1,0 +1,21 @@
+.Banner {
+    width: 1400px;
+    height: 300px;
+    margin: 20px;
+
+    text-align: center;
+
+    background: darksalmon;
+
+}
+
+.Banner .slick-slide div{
+    outline:none;
+
+}
+
+.Banner img{
+    width: 300px;
+    height: 300px;
+    margin: 0px auto;
+}
