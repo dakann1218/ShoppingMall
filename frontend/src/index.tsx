@@ -1,5 +1,8 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
+import { History } from 'history';
+import { createBrowserHistory } from "history";
+
 import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
@@ -7,9 +10,11 @@ import reportWebVitals from './reportWebVitals';
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 
+const history = createBrowserHistory()
+
 ReactDOM.render(
   <React.StrictMode>
-    <App />
+    <App history={history}/>
   </React.StrictMode>,
   document.getElementById('root')
 );

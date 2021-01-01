@@ -1,0 +1,23 @@
+.Category{
+    display: flex;
+
+    box-sizing: border-box;
+    width: 1980px;
+    height: 30px;
+
+    background: white;
+    border: 3px solid black;
+    justify-content: space-evenly;
+
+}
+
+.Category button{
+    flex: 1;
+
+    border: 1px solid black;
+    background: white;
+
+    text-align: center;
+    font-weight: bold;
+    color: black;
+}

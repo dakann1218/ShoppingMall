@@ -1,103 +1,11 @@
 body{
     background: pink;
 }
+
 .MainPage {
     display: flex;
 
     flex-direction: column;
     align-items: center;
     width: 1980px;
-}
-
-.MainPage .Header{
-    background: white;
-
-    display: flex;    
-    flex-direction: column;
-    
-    height:150px;
-    margin: 0px;
-
-}
-
-.MainPage .Header h1{
-    flex: 4;
-
-    width: 1980px;
-
-    text-align: center;
-    font-size: 40px;
-}
-.MainPage .Header .Menu{
-    flex: 1;
-    display: flex;
-    justify-content: flex-end;
-    margin: 5px;
-    padding: 5px;
-}
-.MainPage .Header button{
-    margin: auto 10px;
-    padding: 2px 10px;
-
-    border: 3px solid darksalmon;
-    border-radius: 4px;
-    background: pink;
-    
-    color: black;
-    font-size: 12px;
-    font-weight: bold;
-}
-
-.MainPage .Category{
-    display: flex;
-
-    box-sizing: border-box;
-    width: 1980px;
-    height: 30px;
-
-    background: white;
-    border: 3px solid black;
-    justify-content: space-evenly;
-
-}
-
-.MainPage .Category button{
-    flex: 1;
-
-    border: 1px solid black;
-    background: white;
-
-    text-align: center;
-    font-weight: bold;
-    color: black;
-}
-
-.MainPage .BestChoice{
-    width: 1980px;
-
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-}
-
-.MainPage .BestChoice{
-    margin: 100px 0px auto;
-}
-.MainPage .Items{
-
-    width: 1000px;
-    height: 400px;
-    margin: auto;
-    display: flex;
-    justify-content: space-around;
-
-}
-.MainPage .Items img{
-
-    border: 5px solid darksalmon;
-    border-radius: 5px;
-    width: 300px;
-    height: 300px;
-    margin: auto;
-
 }
