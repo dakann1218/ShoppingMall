@@ -9,7 +9,8 @@ import image2 from '../items/2.jpg';
 import image3 from '../items/3.jpg'; 
 import image4 from '../items/4.jpg'; 
 import image5 from '../items/5.jpg'; 
-import image6 from '../items/6.jpg'; 
+import image6 from '../items/6.jpg';
+import banner from '../items/Banner.jpg';
 
 /* Styled component?
 const StyledSlider = styled(Slider)`
@@ -35,22 +36,22 @@ function Banner(){
         <Slider {...settings}>
             {/*To be changed to .map()*/}
             <div>
-            <img src = {image1} alt = ''/>
+            <img src = {banner} alt = ''/>
             </div>
             <div>
-            <img src = {image2} alt = ''/>
+            <img src = {banner} alt = ''/>
             </div>
             <div>
-            <img src = {image3} alt = ''/>
+            <img src = {banner} alt = ''/>
             </div>
             <div>
-            <img src = {image4} alt = ''/>
+            <img src = {banner} alt = ''/>
             </div>
             <div>
-            <img src = {image5} alt = ''/>
+            <img src = {banner} alt = ''/>
             </div>
             <div>
-            <img src = {image6} alt = ''/>
+            <img src = {banner} alt = ''/>
             </div>
         </Slider>
         </div>
