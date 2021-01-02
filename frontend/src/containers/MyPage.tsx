@@ -1,10 +1,27 @@
 import React from 'react';
+import { History } from 'history';
 
+import './MyPage.css'
 
-function MyPage(){
+interface Props{
+    history: History;
+}
+
+function MyPage(props: Props){
+    const {history} = props;
+
     return(
-        <div>                
-        <h1>This is my page</h1>
+        <div className = 'MyPage'>                
+        <h1>My page</h1>
+        <div className = 'Buttons'>
+            <button>정보 변경</button>
+
+            <button>주문 내역</button>
+
+            <button>장바구니</button>
+
+            <button>My QnA</button>
+        </div>
         </div>
     );
 }

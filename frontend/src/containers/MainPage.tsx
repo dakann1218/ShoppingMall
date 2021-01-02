@@ -13,8 +13,6 @@ interface Props {
     history: History;
 }
 
-
-
 function MainPage(props: Props){
     const {history} = props;
 

@@ -13,9 +13,9 @@ function Category(props: Props){
 	
 	return(
 		<div className = 'Category'>
-            <button onClick = {() => history.push('/neat')}>Neat</button>
-            <button onClick = {() => history.push('/sweatshirt')}>Sweat shirt</button>
-            <button onClick = {() => history.push('/coat')}>Coat</button>            
+            <button onClick = {() => history.push('/itemlist/neat')}>Neat</button>
+            <button onClick = {() => history.push('/itemlist/sweatshirt')}>Sweat shirt</button>
+            <button onClick = {() => history.push('/itemlist/coat')}>Coat</button>            
         </div>
 	);
 }

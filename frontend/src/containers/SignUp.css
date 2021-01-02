@@ -1,0 +1,45 @@
+.SignUp{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    width: 1200px;
+    margin: 100px 400px;
+    padding: 100px 0px 0px;
+    background: white;
+}
+
+.SignUp .InputBox{
+    width: 800px;
+}
+
+.SignUp .InputBox div{
+    margin: 50px auto;
+}
+
+.SignUp .InputBox label{
+    display: inline-block;
+
+    width: 200px;
+
+    font-size: 35px;
+    font-weight: bold;
+}
+
+.SignUp input{
+    width: 500px;
+    height: 35px;
+
+    font-size: 25px;
+}
+
+.SignUp button{
+    display: inline-block;
+    width: 320px;
+    padding: 50px;
+    margin: 50px 250px;
+    background: white;
+
+    font-size: 40px;
+    font-weight: bold;
+}

@@ -1,7 +1,7 @@
 import React from 'react';
 
 
-function Item(){
+function ItemPage(){
     return(
         <div>                
         <h1>This is item page</h1>
@@ -12,4 +12,4 @@ function Item(){
 
 
 
-export default Item;
+export default ItemPage;

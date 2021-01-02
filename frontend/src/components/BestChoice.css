@@ -11,17 +11,8 @@
 
     width: 1000px;
     height: 400px;
-    margin: auto;
+    margin: 50px;
     display: flex;
     justify-content: space-around;
-
-}
-.BestChoice .Items img{
-
-    border: 5px solid darksalmon;
-    border-radius: 5px;
-    width: 300px;
-    height: 300px;
-    margin: auto;
 
 }

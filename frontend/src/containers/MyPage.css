@@ -1,0 +1,35 @@
+.MyPage {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    width: 1980px;
+    height: 1000px;
+    padding: 100px 0px 0px 0px;
+}
+
+.MyPage h1{
+    flex: 1;
+    font-size: 60px;
+}
+
+.MyPage .Buttons{
+    flex: 6;
+    display: flex;
+    width: 1600px;
+    height: 1000px;
+}
+
+.MyPage button{
+    flex: 1;
+    background: white;
+    margin: 10px;
+
+    border: 3px solid black;
+    border-radius: 10px;
+    
+    color: black;
+    font-size: 40px;
+    font-weight: bold;
+}

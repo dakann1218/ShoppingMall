@@ -1,0 +1,10 @@
+.ItemList {
+    margin: 100px 200px;
+}
+
+.ItemList .Row{
+    display: flex;
+    margin: 100px 0px;
+    width: 1600px;
+    justify-content: space-evenly;
+}
