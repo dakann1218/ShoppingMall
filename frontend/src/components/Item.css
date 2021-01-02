@@ -4,7 +4,7 @@
     width: 300px;
     height: 400px;
     margin: auto;
-    background: white;
+    background: azure;
 }
 
 .Item img{
@@ -13,9 +13,21 @@
     height: 310px;
 }
 
-.Item h1{
+.Item div{
     margin: 0px;
     height: 30px;
 
     font-size:15px;
+}
+
+.Item .Like{
+    margin: 5px 0px;
+    width: 25px;
+    height: 25px;
+}
+
+.Item .Love{
+    margin: 5px 0px;
+    width: 25px;
+    height: 25px;
 }

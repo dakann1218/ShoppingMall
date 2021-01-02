@@ -5,7 +5,6 @@ import './MainPage.css';
 
 import Banner from '../components/Banner';
 import BestChoice from '../components/BestChoice'
-import Footer from '../components/Footer';
 
 
 
@@ -25,9 +24,6 @@ function MainPage(props: Props){
         {/*Best Choice*/}
         {/*To be changed with .map function*/}
         <BestChoice history = {history}/>
-
-        {/*Footer*/}
-        <Footer/>
 
         </div>
     );

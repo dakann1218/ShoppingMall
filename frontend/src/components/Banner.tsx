@@ -4,12 +4,6 @@ import Slider from "react-slick";
 
 import './Banner.css'
 
-import image1 from '../items/1.jpg'; 
-import image2 from '../items/2.jpg';
-import image3 from '../items/3.jpg'; 
-import image4 from '../items/4.jpg'; 
-import image5 from '../items/5.jpg'; 
-import image6 from '../items/6.jpg';
 import banner from '../items/Banner.jpg';
 
 /* Styled component?

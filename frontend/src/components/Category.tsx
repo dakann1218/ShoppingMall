@@ -1,6 +1,5 @@
 import React from 'react';
 import {History} from 'history';
-import { withRouter } from 'react-router-dom';
 
 import './Category.css';
 

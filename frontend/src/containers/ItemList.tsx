@@ -27,12 +27,12 @@ function ItemList(props: RouteComponentProps<Props>){
     var count2 = 0;
     let rowlist: JSX.Element[];
     const images = imagelist.map((image) =>{
-        if(count2 % 4 == 0 ){
+        if(count2 % 4 === 0 ){
             rowlist = []
         }
         rowlist.push(<Item history = {history} image = {image} />)
         count2 = count2 + 1
-        if((count2 % 4 == 0) || (count2 == count-1)){        
+        if((count2 % 4 === 0) || (count2 === count-1)){        
             return(
                 <div className = 'Row'>
                     {rowlist} 

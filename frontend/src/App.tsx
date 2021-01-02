@@ -4,14 +4,15 @@ import { Router } from 'react-router';
 import { History } from 'history';
 
 import Header from './components/Header';
+import Footer from './components/Footer';
 import Category from './components/Category';
-import MainPage from './containers/MainPage'
-import SignIn from './containers/SignIn'
-import SignUp from './containers/SignUp'
-import MyPage from './containers/MyPage'
-import QnA from './containers/QnA'
-import ItemPage from './containers/ItemPage'
-import ItemList from './containers/ItemList'
+import MainPage from './containers/MainPage';
+import SignIn from './containers/SignIn';
+import SignUp from './containers/SignUp';
+import MyPage from './containers/MyPage';
+import QnA from './containers/QnA';
+import ItemPage from './containers/ItemPage';
+import ItemList from './containers/ItemList';
 
 interface Props{
 	history: History;
@@ -37,6 +38,7 @@ function App(props: Props) {
 				<Redirect exact from = '/' to = '/main' />
 				<Route render = {()=> <h1>Not Found</h1>}/>
 			</Switch>
+			<Footer/>
 		</div>
 		</Router>
 	  );
