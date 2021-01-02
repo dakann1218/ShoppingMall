@@ -23,6 +23,22 @@ class Item extends Component<Props, States>{
 	}
 	/*let likeimg: string = require('../items/like_gray.png').default*/
 	
+	componentDidMount() {
+		axios.get(`/api/getLikeLove/${this.props.name}` ) 
+		.then(res => {
+			if (res.data.liked){
+				this.setState({likeimg: require('../items/like.PNG').default});
+			}
+			if (res.data.loved){
+				this.setState({loveimg: require('../items/love.PNG').default});
+			}
+		})
+		.catch(err =>{
+			if (this.props.name !== ''){		/*To be changed after making Best Choice image's name*/
+			   alert('Component Mount Error')
+			}});
+	}
+	
 	onClickLike = () =>{
 		axios.post('/api/changeLike/',{name: this.props.name})
 		.then(res => {

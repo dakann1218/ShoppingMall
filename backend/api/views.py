@@ -7,7 +7,16 @@ from .models import Item, Basket
 def index(request):
     return HttpResponse('Hello, world!')
 
-
+def getLikeLove(request, name = ''):
+    if request.method == 'GET':
+        for item in Item.objects.all():
+            if item.name == name:
+                return JsonResponse({'liked': item.liked, 'loved': item.loved}, status = 201)
+        
+        return JsonResponse(status=400)    #no such name
+    else:
+        return HttpResponseNotAllowed(['GET'])
+    
 #Add or Substract Like
 def changeLike(request):
     if request.method == 'POST':

@@ -9,7 +9,7 @@ import reportWebVitals from './reportWebVitals';
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 
-const history = createBrowserHistory()
+const history = createBrowserHistory({ forceRefresh: true })
 
 ReactDOM.render(
   <React.StrictMode>
