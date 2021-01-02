@@ -25,13 +25,13 @@ function BestChoice(props: Props){
 
     const row1 = imagelist1.map((img) => {
         return(
-            <Item history = {history} image = {img}/>
+            <Item history = {history} image = {img} name = {''}/>
         );
     });
 
     const row2 = imagelist2.map((img) => {
         return(
-            <Item history = {history} image = {img}/>
+            <Item history = {history} image = {img} name = {''}/>
         );
     });
 

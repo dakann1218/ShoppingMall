@@ -30,8 +30,12 @@ function ItemList(props: RouteComponentProps<Props>){
         if(count2 % 4 === 0 ){
             rowlist = []
         }
-        rowlist.push(<Item history = {history} image = {image} />)
-        count2 = count2 + 1
+		count2 = count2 + 1
+        rowlist.push(<Item
+						 history = {history}
+						 image = {image}
+						 name = {match.params.itemclass + String(count2)}
+						 />) 
         if((count2 % 4 === 0) || (count2 === count-1)){        
             return(
                 <div className = 'Row'>
