@@ -1,6 +1,10 @@
 import React, { Component } from 'react';
 import {History} from 'history';
-import axios from 'axios';
+
+/* redux */
+import { connect } from 'react-redux';
+import { Dispatch } from 'redux';
+import * as actionTypes from '../store/actions/actionTypes';
 
 import './Item.css';
 
@@ -8,59 +12,69 @@ import './Item.css';
 interface Props{
     history: History;
     image: string;
-	name: string;
+	category: string;
+	number: number;
+	onChangeLiked: (category: string , number: number) => void;
+	onChangeLoved: (category: string , number: number) => void;
+	storedLiked: LikeLoveDict;
+	storedLoved: LikeLoveDict;
+}
+
+type LikeLoveDict = {
+	[key: string]: number[],
 }
 
 interface States{
 	likeimg: string;
 	loveimg: string;
 }
+
 class Item extends Component<Props, States>{
-    /*const {history, image, name} = props;*/
+    /*const {history, image, category, number} = props;*/
 	state = {
 		likeimg: require('../items/like_gray.png').default,
 		loveimg: require('../items/love_gray.png').default,
 	}
 	/*let likeimg: string = require('../items/like_gray.png').default*/
 	
-	componentDidMount() {
-		axios.get(`/api/getLikeLove/${this.props.name}` ) 
-		.then(res => {
-			if (res.data.liked){
-				this.setState({likeimg: require('../items/like.PNG').default});
+	componentDidMount(){
+		if (this.props.number !== 0){
+			const liked = this.props.storedLiked[this.props.category][this.props.number - 1];
+			if (liked){
+				this.setState({ likeimg: require('../items/like.PNG').default });
+			}else{
+				this.setState({ likeimg: require('../items/like_gray.png').default });
 			}
-			if (res.data.loved){
-				this.setState({loveimg: require('../items/love.PNG').default});
+
+			const loved = this.props.storedLoved[this.props.category][this.props.number - 1];
+			if (loved){
+				this.setState({ loveimg: require('../items/love.PNG').default });
+			}else{
+				this.setState({ loveimg: require('../items/love_gray.png').default });
 			}
-		})
-		.catch(err =>{
-			if (this.props.name !== ''){		/*To be changed after making Best Choice image's name*/
-			   alert('Component Mount Error')
-			}});
+		}
 	}
 	
 	onClickLike = () =>{
-		axios.post('/api/changeLike/',{name: this.props.name})
-		.then(res => {
-			if (res.data.liked){
-				this.setState({likeimg: require('../items/like.PNG').default});
-			}else{
-				this.setState({likeimg: require('../items/like_gray.png').default});
-			}		
-		})
-		.catch(err => alert('Error'));
+		/*Change redux state - liked*/
+		this.props.onChangeLiked(this.props.category, this.props.number);
+		const liked = this.props.storedLiked[this.props.category][this.props.number - 1];
+		if (liked){
+			this.setState({ likeimg: require('../items/like.PNG').default });
+		}else{
+			this.setState({ likeimg: require('../items/like_gray.png').default });
+		}
 	}
 	
 	onClickLove = () =>{
-		axios.post('/api/changeBasket/',{name: this.props.name})
-		.then(res => {
-			if (res.data.loved){
-				this.setState({loveimg: require('../items/love.PNG').default});
-			}else{
-				this.setState({loveimg: require('../items/love_gray.png').default});
-			}		
-		})
-		.catch(err => alert('Error'));
+		/*Change redux state - loved*/
+		this.props.onChangeLoved(this.props.category, this.props.number);
+		const loved = this.props.storedLoved[this.props.category][this.props.number - 1]
+		if (loved){
+			this.setState({ loveimg: require('../items/love.PNG').default })
+		}else{
+			this.setState({ loveimg: require('../items/love_gray.png').default })
+		}
 	}
 	
 	render(){
@@ -83,4 +97,20 @@ class Item extends Component<Props, States>{
 	}
 }
 
-export default Item;
+const mapDispatchToProps = (dispatch: Dispatch) => {
+	return {
+		onChangeLiked: (category: string , number: number) =>
+		dispatch({ type: actionTypes.CHANGE_LIKED, category: category, number: number }),
+		onChangeLoved: (category: string , number: number) =>
+		dispatch({ type: actionTypes.CHANGE_LOVED, category: category, number: number })
+	};
+};
+
+const mapStateToProps = (state: any) => {
+	return {
+		storedLiked: state.llr.liked,
+		storedLoved: state.llr.loved,
+	};
+};
+
+export default connect(mapStateToProps, mapDispatchToProps)(Item);

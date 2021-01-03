@@ -1,6 +1,10 @@
 import React, { Component } from 'react';
 import { RouteComponentProps } from 'react-router';
 
+/* redux */
+import { connect } from 'react-redux';
+import * as actionTypes from '../store/actions/actionTypes';
+
 import Item from '../components/Item';
 
 import './ItemList.css'
@@ -9,10 +13,23 @@ interface Props{
     itemclass: string;
 }
 
-class ItemList extends Component<RouteComponentProps<Props>>{
+interface Propss{
+	storedLiked: LikeLoveDict;
+}
+
+type LikeLoveDict = {
+	[key: string]: number[],
+}
+
+type Propsss = RouteComponentProps<Props> & Propss
+
+class ItemList extends Component<Propsss>{
     /*const {history, match} = props;
 
     let imagelist: string[] = [];*/
+	componentDidMount(){
+		console.log(this.props.storedLiked[this.props.match.params.itemclass]);
+	}
 	
 	render(){
 		let imagelist: string[] = [];
@@ -37,7 +54,8 @@ class ItemList extends Component<RouteComponentProps<Props>>{
 			rowlist.push(<Item
 							 history = {this.props.history}
 							 image = {image}
-							 name = {this.props.match.params.itemclass + String(count2)}
+							 category = {this.props.match.params.itemclass}
+							 number = {count2}
 							 />) 
 			if((count2 % 4 === 0) || (count2 === count-1)){        
 				return(
@@ -58,4 +76,11 @@ class ItemList extends Component<RouteComponentProps<Props>>{
 	}
 }
 
-export default ItemList;
+const mapStateToProps = (state: any) => {
+	return {
+		storedLiked: state.llr.liked,
+		storedLoved: state.llr.loved,
+	};
+};
+
+export default connect(mapStateToProps, null)(ItemList);
