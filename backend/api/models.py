@@ -1,6 +1,8 @@
 from django.db import models
 
 class Item(models.Model):
+    category = models.TextField()
+    number = models.IntegerField()
     name = models.TextField()
     title = models.TextField()
     description = models.TextField()
@@ -10,6 +12,6 @@ class Item(models.Model):
     loved = models.IntegerField(default = 0)
     like = models.IntegerField(default = 0)
     love = models.IntegerField(default = 0)
-    
+
 class Basket(models.Model):
     name = models.TextField()
