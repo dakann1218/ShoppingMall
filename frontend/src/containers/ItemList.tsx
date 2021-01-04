@@ -33,12 +33,17 @@ class ItemList extends Component<RouteComponentProps<Props>>{
 			if(count2 % 4 === 0 ){
 				rowlist = []
 			}
-			count2 = count2 + 1
-			rowlist.push(<Item
-							 history = {this.props.history}
-							 image = {image}
-							 name = {this.props.match.params.itemclass + String(count2)}
-							 />) 
+			
+			count2 = count2 + 1;
+			rowlist.push(
+				<Item
+					 history = {this.props.history}
+					 image = {image}
+					 category = {this.props.match.params.itemclass}
+					 number = {count2}
+					 />
+			);
+			
 			if((count2 % 4 === 0) || (count2 === count-1)){        
 				return(
 					<div className = 'Row'>

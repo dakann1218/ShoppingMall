@@ -1,0 +1,10 @@
+.MyBasket {
+    margin: 100px 200px;
+}
+
+.MyBasket .Row{
+    display: flex;
+    margin: 100px 0px;
+    width: 1600px;
+    justify-content: space-evenly;
+}

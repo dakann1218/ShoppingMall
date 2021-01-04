@@ -18,7 +18,7 @@ function MyPage(props: Props){
 
             <button>주문 내역</button>
 
-            <button>장바구니</button>
+            <button onClick = {() => history.push('/mybasket')}>장바구니</button>
 
             <button>My QnA</button>
         </div>
