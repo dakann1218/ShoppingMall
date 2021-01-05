@@ -14,6 +14,8 @@ import QnA from './containers/QnA';
 import ItemPage from './containers/ItemPage';
 import ItemList from './containers/ItemList';
 import MyBasket from './containers/MyBasket';
+import OrderPage from './containers/OrderPage';
+import OrderList from './containers/OrderList';
 
 interface Props{
 	history: History;
@@ -34,9 +36,11 @@ function App(props: Props) {
 				<Route path = '/signup' render = {() => <SignUp history = {history}/> }  />
 				<Route path = '/mypage' render = {() => <MyPage history = {history}/> } />
 				<Route path = '/qna' exact component = { QnA } />
-				<Route path = '/item' exact component = { ItemPage } />
+				<Route path = '/item/:category/:number' exact component = { ItemPage } />
 				<Route path = '/itemlist/:itemclass' exact component = { ItemList } />
 				<Route path = '/mybasket' exact component = { MyBasket } />
+				<Route path = '/orderpage/:category/:number/:size/:color' exact component = {OrderPage} />
+				<Route path = '/orderlist' exact component = {OrderList}/>
 				<Redirect exact from = '/' to = '/main' />
 				<Route render = {()=> <h1>Not Found</h1>}/>
 			</Switch>

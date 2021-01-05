@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import {History} from 'history';
+import { History } from 'history';
 
 import './SignIn.css'
 

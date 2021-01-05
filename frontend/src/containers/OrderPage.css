@@ -1,0 +1,57 @@
+.OrderPage{
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	width: 1980px;
+	height: 500px;
+}
+
+.OrderPage img{
+	width: 200px;
+	height: 300px;
+	border: 5px solid darksalmon;
+}
+
+.OrderPage .Info{
+	height: 300px;
+	width: 800px;
+	background: white;
+	border: 5px solid darksalmon;
+}
+
+.OrderPage label{
+	display: block;
+	margin: 10px;
+	
+	font-size: 30px;	
+}
+
+.OrderPage h1{
+	display: inline-block;
+	background: white;
+	margin: 10px;
+	
+	font-size: 30px;	
+	font-weight: normal;
+}
+
+.OrderPage input{
+	height: 40px;
+	width: 600px;
+	
+	font-size: 25px;
+}
+
+.OrderPage button{
+	height: 50px;
+	width: 150px;
+	margin: 10px;
+	
+	border: 1px solid black;
+    background: white;
+
+    text-align: center;
+    font-weight: bold;
+	font-size: 30px;
+}
+

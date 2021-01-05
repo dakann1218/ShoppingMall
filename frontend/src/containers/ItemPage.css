@@ -1,0 +1,76 @@
+.ItemPage{
+	display: flex;
+	justify-content: center;
+	width: 1980px;
+}
+
+.ItemPage .ItemImage{
+	width: 800px;
+	height: 1000px;
+	margin: 100px 20px;
+	border: 10px solid darksalmon;
+}
+
+.ItemPage .RightSide{
+	display: flex;
+	flex-direction: column;
+	
+	height: 1000px;
+	width: 800px;
+	margin: 100px 20px;
+	border: 10px solid darksalmon;
+	
+	background: white;
+}
+
+.ItemPage .RightSide .Title{
+	flex: 2;
+	box-sizing:border-box;
+	text-align: center;
+	
+	margin: 0px;
+	padding: 100px;
+	border: 1px solid darksalmon;
+	
+	font-size: 60px;
+}
+
+.ItemPage .RightSide .Options{
+	flex: 5;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: flex-end;
+	
+	margin: 0px;
+	
+	text-align: center;
+	
+}
+
+.ItemPage .RightSide .Buttons{
+	flex: 2;
+	display: flex;
+	justify-content: space-around;
+	
+	border: 1px solid darksalmon;
+	padding: 20px;
+}
+
+.ItemPage .RightSide .Buttons button{
+	height: 200px;
+	width: 200px;
+	
+	border: 1px solid black;
+    background: white;
+
+    text-align: center;
+    font-weight: bold;
+	font-size: 40px;
+	
+}
+
+.ItemPage .RightSide .Buttons img{
+	height: 200px;
+	width: 200px;
+}

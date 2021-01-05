@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { Link }  from 'react-router-dom';
 import {History} from 'history';
 import axios from 'axios';
 
@@ -67,26 +68,17 @@ class Item extends Component<Props, States>{
 	}
 	
 	render(){
-		
+		let likelove: JSX.Element;
 		if (this.state.loading){
-			return(
-				<div className = 'Item'>
-				<img onClick ={ ()=> this.props.history.push('/item')} src = {this.props.image} alt = ''/>
-				<div>{'Title: ...'}</div>
-				<div>{'Description: ...'}</div>
-				<div>{'Price: 20000'}</div>
+			likelove =(
+				<div>
 				<h5>loading like...</h5>
 				<h5>loading love...</h5>
-			</div>
+				</div>
 			);
-		}
-		
-		return(
-			<div className = 'Item'>
-				<img onClick ={ ()=> this.props.history.push('/item')} src = {this.props.image} alt = ''/>
-				<div>{'Title: ...'}</div>
-				<div>{'Description: ...'}</div>
-				<div>{'Price: 20000'}</div>
+		}else{
+			likelove =(
+				<div>
 				<img
 					className = 'Like' 
 					onClick ={ ()=> this.onClickLike()}
@@ -95,6 +87,21 @@ class Item extends Component<Props, States>{
 					className = 'Love'
 					onClick ={ ()=> this.onClickLove()}
 					src = {this.state.loveimg} alt=''/>
+				</div>
+			);
+		}
+		
+		return(
+			<div className = 'Item'>
+				<img
+					onClick ={ ()=> this.props.history.push(`/item/${this.props.category}/${this.props.number}`)}
+					src = {this.props.image}
+					alt = ''
+					/>
+				<div>{'Title: ...'}</div>
+				<div>{'Description: ...'}</div>
+				<div>{'Price: 20000'}</div>
+				{likelove}
 			</div>
 		);
 	}

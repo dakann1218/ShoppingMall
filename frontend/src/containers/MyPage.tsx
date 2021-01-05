@@ -16,7 +16,7 @@ function MyPage(props: Props){
         <div className = 'Buttons'>
             <button>정보 변경</button>
 
-            <button>주문 내역</button>
+            <button onClick = {() => history.push('/orderlist')}>주문 내역</button>
 
             <button onClick = {() => history.push('/mybasket')}>장바구니</button>
 

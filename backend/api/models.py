@@ -17,3 +17,10 @@ class Item(models.Model):
 class Basket(models.Model):
     category = models.TextField(default = '')
     number = models.IntegerField(default = 0)
+    
+class OrderList(models.Model):
+    category = models.TextField(default = '')
+    number = models.IntegerField(default = 0)
+    size = models.TextField(default = '')
+    color = models.TextField(default = '')
+    address = models.TextField(default = '')

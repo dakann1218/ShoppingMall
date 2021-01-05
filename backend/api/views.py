@@ -1,7 +1,7 @@
 from django.shortcuts import render
 from django.http import HttpResponse, HttpResponseNotAllowed, JsonResponse
 import json
-from .models import Item, Basket
+from .models import Item, Basket, OrderList
 
 def index(request):
     return HttpResponse('Hello, world!')
@@ -71,3 +71,38 @@ def getBasket(request):
         return JsonResponse({'basket_list': basket_list}, status = 201)
     else:
         return HttpResponseNotAllowed(['GET'])
+    
+def addOrder(request):
+    if request.method == 'POST':
+        body = json.loads(request.body.decode())
+        category = body['category']
+        number = body['number']
+        size = body['size']
+        color = body['color']
+        address = body['address']
+        
+        new_order = OrderList( category = category, number = number, size = size, color = color, address = address )
+        new_order.save()
+        return HttpResponse(status = 201)
+    else:
+        return HttpResponseNotAllowed(['POST'])
+    
+def getOrder(request):
+    if request.method == 'GET':
+        order_list = []
+        for order in OrderList.objects.all():
+            order_list.append({'category': order.category, 'number': order.number, 'size': order.size, 'color': order.color, 'address': order.address })
+        return JsonResponse({'order_list': order_list}, status = 201)
+    else:
+        return HttpResponseNotAllowed(['GET'])
+        
+        
+        
+        
+        
+        
+    
+    
+    
+    
+    
