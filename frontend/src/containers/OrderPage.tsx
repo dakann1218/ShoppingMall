@@ -24,14 +24,20 @@ function OrderPage(props: (Props & RouteComponentProps<MatchProps>)){
 	
 	
 	const onClickBuy = () => {
-		if (address === ''){
-			alert('Write your address!');
+		const id = window.sessionStorage.getItem('id');
+		
+		if (id === null){
+			alert('Please login to buy item')
 		}else{
-			axios.post('/api/addOrder', { 'category': match.params.category, 'number': Number(match.params.number), 'size': match.params.size, 'color': match.params.color, 'address': address })
-			.then((res) => null)
-			.catch((err) => alert('Buy Error'))
-			/* Wait until response with middleware? */
-			history.push('/orderlist');
+			if (address === ''){
+				alert('Write your address!');
+			}else{
+				axios.post('/api/addOrder', { 'id': id, 'category': match.params.category, 'number': Number(match.params.number), 'size': match.params.size, 'color': match.params.color, 'address': address })
+				.then((res) => null)
+				.catch((err) => alert('Buy Error'))
+				/* Wait until response with middleware? */
+				history.push('/orderlist');
+			}
 		}
 	}
 	

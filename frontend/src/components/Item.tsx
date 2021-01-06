@@ -14,6 +14,7 @@ interface Props{
 }
 
 interface States{
+	name: string;
 	likeimg: string;
 	loveimg: string;
 	loading: boolean;
@@ -21,75 +22,72 @@ interface States{
 
 class Item extends Component<Props, States>{
 	state = {
+		name: this.props.category + String(this.props.number),
 		likeimg: require('../items/like_gray.png').default,
 		loveimg: require('../items/love_gray.png').default,
-		loading: true,
+		loading: false,
 	}
 	
 	componentDidMount() {
-		axios.get(`/api/getLikeLove/${this.props.category}/${this.props.number}` ) 
-		.then(res => {
-			if (res.data.liked){
-				this.setState({likeimg: require('../items/like.PNG').default});
+		const likelist: any = window.sessionStorage.getItem('liked');
+		const lovelist: any = window.sessionStorage.getItem('loved');
+		if (likelist !== null && lovelist !== null){
+			if (likelist.indexOf(this.state.name) >= 0){
+				this.setState({ likeimg: require('../items/like.PNG').default });
 			}
-			if (res.data.loved){
-				this.setState({loveimg: require('../items/love.PNG').default});
+			if (lovelist.indexOf(this.state.name) >= 0){
+				this.setState({ loveimg: require('../items/love.PNG').default });
 			}
-			this.setState({ loading: false });
-		})
-		.catch(err =>{
-			if (this.props.category !== ''){		/*To be changed after making Best Choice image's name*/
-			   alert('Component Mount Error')
-			}});
+		}
 	}
 	
 	onClickLike = () =>{
-		axios.post('/api/changeLike/', {'category': this.props.category, 'number': this.props.number })
-		.then(res => {
-			if (res.data.liked){
-				this.setState({likeimg: require('../items/like.PNG').default});
-			}else{
-				this.setState({likeimg: require('../items/like_gray.png').default});
-			}		
-		})
-		.catch(err => alert('Error'));
+		const id = window.sessionStorage.getItem('id');
+		const liked = window.sessionStorage.getItem('liked');
+		const liked_list: string[] = (liked === null? []: liked.split(','));
+		if (id === null){
+			alert('Please login to like it');
+		}else{
+			axios.post('/api/changeLike/', {'id': id, 'category': this.props.category, 'number': this.props.number })
+			.then(res => {
+				if (res.data.liked){
+					this.setState({likeimg: require('../items/like.PNG').default});
+					liked_list.push(this.state.name);
+					window.sessionStorage.setItem('liked', String(liked_list));
+				}else{
+					this.setState({likeimg: require('../items/like_gray.png').default});
+					liked_list.splice(liked_list.indexOf(this.state.name),1);
+					window.sessionStorage.setItem('liked', String(liked_list));
+				}		
+			})
+			.catch(err => alert('Error'));
+		}
 	}
 	
 	onClickLove = () =>{
-		axios.post('/api/changeLove/', {'category': this.props.category, 'number': this.props.number })
-		.then(res => {
-			if (res.data.loved){
-				this.setState({loveimg: require('../items/love.PNG').default});
-			}else{
-				this.setState({loveimg: require('../items/love_gray.png').default});
-			}		
-		})
-		.catch(err => alert('Error'));
+		const id = window.sessionStorage.getItem('id');
+		const loved = window.sessionStorage.getItem('loved');
+		const loved_list: string[] = (loved === null? []: loved.split(','));
+		if (id === null){
+			alert('Please login to love it');
+		}else{
+			axios.post('/api/changeLove/', {'id': id, 'category': this.props.category, 'number': this.props.number })
+			.then(res => {
+				if (res.data.loved){
+					this.setState({loveimg: require('../items/love.PNG').default});
+					loved_list.push(this.state.name);
+					window.sessionStorage.setItem('loved', String(loved_list));
+				}else{
+					this.setState({loveimg: require('../items/love_gray.png').default});
+					loved_list.splice(loved_list.indexOf(this.state.name),1);
+					window.sessionStorage.setItem('loved', String(loved_list));
+				}		
+			})
+			.catch(err => alert('Error'));
+		}
 	}
 	
 	render(){
-		let likelove: JSX.Element;
-		if (this.state.loading){
-			likelove =(
-				<div>
-				<h5>loading like...</h5>
-				<h5>loading love...</h5>
-				</div>
-			);
-		}else{
-			likelove =(
-				<div>
-				<img
-					className = 'Like' 
-					onClick ={ ()=> this.onClickLike()}
-					src = {this.state.likeimg} alt=''/>
-				<img
-					className = 'Love'
-					onClick ={ ()=> this.onClickLove()}
-					src = {this.state.loveimg} alt=''/>
-				</div>
-			);
-		}
 		
 		return(
 			<div className = 'Item'>
@@ -101,7 +99,16 @@ class Item extends Component<Props, States>{
 				<div>{'Title: ...'}</div>
 				<div>{'Description: ...'}</div>
 				<div>{'Price: 20000'}</div>
-				{likelove}
+				<div>
+					<img
+						className = 'Like' 
+						onClick ={ ()=> this.onClickLike()}
+						src = {this.state.likeimg} alt=''/>
+					<img
+						className = 'Love'
+						onClick ={ ()=> this.onClickLove()}
+						src = {this.state.loveimg} alt=''/>
+				</div>
 			</div>
 		);
 	}

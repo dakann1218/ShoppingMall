@@ -12,24 +12,30 @@ function OrderList(){
 	const [orders, setOrders] = useState([]);
 	
 	useEffect(() => {
-		axios.get('/api/getOrder')
-		.then(res => {
-			setOrders(res.data.order_list.map((order: OrderType) =>{
-				setAddress(order.address);
-				return(
-					<div className = 'OrderBox'>
-						<img src = {require(`../items/${order.category}/${order.number}.jpg`).default}/>
-						<div className = 'Info'>
-							<h1>{ 'Item: ' + order.category + String(order.number) }</h1>
-							<h1>{ 'Size: ' + order.size }</h1>
-							<h1>{ 'Color: ' + order.color }</h1>
-							<h1>{ 'Address: ' + order.address }</h1>
+		const id = window.sessionStorage.getItem('id');
+		
+		if(id === null){
+			alert('Please log in to see your order list');
+		}else{
+			axios.get(`/api/getOrder/${id}`)
+			.then(res => {
+				setOrders(res.data.order_list.map((order: OrderType) =>{
+					setAddress(order.address);
+					return(
+						<div className = 'OrderBox'>
+							<img src = {require(`../items/${order.category}/${order.number}.jpg`).default}/>
+							<div className = 'Info'>
+								<h1>{ 'Item: ' + order.category + String(order.number) }</h1>
+								<h1>{ 'Size: ' + order.size }</h1>
+								<h1>{ 'Color: ' + order.color }</h1>
+								<h1>{ 'Address: ' + order.address }</h1>
+							</div>
 						</div>
-					</div>
-				);
-			}));			
-		})
-		.catch((err) => alert('Order list loading error'));
+					);
+				}));			
+			})
+			.catch((err) => alert('Order list loading error'));
+		}
 	},[]);
 	
 	

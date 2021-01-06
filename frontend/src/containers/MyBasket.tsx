@@ -27,12 +27,17 @@ class MyBasket extends Component<Props,States>{
 	
 	/* Get basket_list from backend */
 	componentDidMount(){
-		axios.get('/api/getBasket')
-		.then(res => {
-			this.setState({ basket_list: res.data.basket_list });
-			this.setState({ loading: false });
-		})
-		.catch(err => alert('Basket Error'));
+		const id = window.sessionStorage.getItem('id');
+		if(id !== null){
+			axios.get(`/api/getBasket/${id}`)
+			.then(res => {
+				this.setState({ basket_list: res.data.basket_list });
+				this.setState({ loading: false });
+			})
+			.catch(err => alert('Basket Error'));
+		}else{
+			alert('Please login to see your basket')
+		}
 	}
 
 	

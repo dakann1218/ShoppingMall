@@ -1,5 +1,6 @@
 import React, {useState} from 'react';
 import { History } from 'history';
+import axios from 'axios';
 
 import './SignUp.css'
 
@@ -16,6 +17,34 @@ function SignUp(props: Props){
     /*props*/
     const {history} = props;
     
+	const onClickSignUp = () =>{
+		if(Email === ''){
+			alert('Write your email!');
+			
+		}
+		else if(Address === ''){
+			alert('Write your address!');
+		}
+		else if(ID === ''){
+			alert('Write your ID!');
+		}
+		else if(PW === ''){
+			alert('Write your PW!')
+		}
+		else{
+			axios.post('/api/signUp',{'id': ID, 'pw': PW, 'address': Address, 'email': Email})
+			.then((res) => {
+				if(res.data.no_duplicate){
+					alert('Sign up success!');
+					history.push('/signin');
+				}else{
+					alert('Duplicate ID!');
+				}
+			})
+			.catch((err) => alert('Sign up error'))
+		}
+	}
+	
     return(
         <div className = 'SignUp'>
 
@@ -60,7 +89,7 @@ function SignUp(props: Props){
                 ></input>
                 </div>
 
-                <button onClick = {() => history.push('/signin')}>Sign up</button>
+                <button onClick = {onClickSignUp}>Sign up</button>
             </div>
         </div>
     );

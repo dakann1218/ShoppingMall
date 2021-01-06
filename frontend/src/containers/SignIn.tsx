@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { History } from 'history';
+import axios from 'axios';
 
 import './SignIn.css'
 
@@ -15,6 +16,36 @@ function SignIn(props: Props){
 	/*props*/
 	const {history} = props
 
+	const onClickSignIn = () => {
+		if (ID === ''){
+			alert('Write your ID!');
+		}
+		else if (PW === ''){
+			alert('Write your PW!');
+		}
+		else{
+			axios.get(`/api/signIn/${ID}/${PW}`)
+			.then((res) => {
+				if (res.data.certification){
+					window.sessionStorage.setItem('id', ID);
+					
+					axios.get(`/api/getAllLikeLove/${ID}`)
+					.then((res) => {
+						window.sessionStorage.setItem('liked', res.data.liked)
+						window.sessionStorage.setItem('loved', res.data.loved)
+						history.push('/main');
+					})
+					.catch((err) => alert('Loading like love error'))
+				}else{
+					alert('Wrong ID or PW!');
+				}
+			})
+			.catch((err) => alert('Sign in error'))
+		}
+	}
+	
+	
+	
     return(
         <div className = 'SignIn'>
 			
@@ -39,7 +70,7 @@ function SignIn(props: Props){
 			</div>
 
 			<div>
-				<button	className = 'SignIn' onClick = {() => alert(`ID: ${ID} PW: ${PW}`)}>
+				<button	className = 'SignIn' onClick = { onClickSignIn }>
 					Sign in
 				</button>
 
