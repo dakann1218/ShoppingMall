@@ -1,6 +1,10 @@
 .MyBasket {
-    margin: 100px 200px;
-	height: 500px;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+
+    width: 1980px;
+	padding: 200px 0px;
 }
 
 .MyBasket .Row{
