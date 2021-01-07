@@ -31,7 +31,8 @@ class MyBasket extends Component<Props,States>{
 		}else{
 			axios.get(`/api/getBasket/${id}`)
 			.then(res => {
-				if (res.data.basket_list !== []){
+				console.log(res.data.basket_list);
+				if (res.data.basket_list[0] !== undefined){
 					this.setState({ basket_list: res.data.basket_list });
 				}
 			})
