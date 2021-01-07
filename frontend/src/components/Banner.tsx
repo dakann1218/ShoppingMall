@@ -4,7 +4,7 @@ import Slider from "react-slick";
 
 import './Banner.css'
 
-import banner from '../items/Banner.jpg';
+import banner from '../items/Banner.png';
 
 /* Styled component?
 const StyledSlider = styled(Slider)`

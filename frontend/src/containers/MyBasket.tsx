@@ -20,7 +20,7 @@ type basket = {
 
 class MyBasket extends Component<Props,States>{
 	state = {
-		basket_list: [{ 'category': '', 'number': 0 }],
+		basket_list: [{'category': '', 'number': 0}],
 	}
 	
 	/* Get basket_list from backend */
@@ -31,7 +31,9 @@ class MyBasket extends Component<Props,States>{
 		}else{
 			axios.get(`/api/getBasket/${id}`)
 			.then(res => {
-				this.setState({ basket_list: res.data.basket_list });
+				if (res.data.basket_list !== []){
+					this.setState({ basket_list: res.data.basket_list });
+				}
 			})
 			.catch(err => alert('Basket Error'));
 		}

@@ -117,7 +117,7 @@ class ItemPage extends Component< (Props & RouteComponentProps<UrlProps>), State
 	onClickBuyNow = () => {
 		if (window.sessionStorage.getItem('id') === null){
 			
-			alert('Plese log in to buy item!')
+			alert('Please log in to buy item!')
 		
 		}else{
 			if (this.state.Size ==='' || this.state.Color ===''){
