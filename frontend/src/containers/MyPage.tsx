@@ -30,13 +30,13 @@ function MyPage(props: Props){
         <div className = 'MyPage'>                
         <h1>My page</h1>
         <div className = 'Buttons'>
-            <button>정보 변경</button>
+            <button onClick = {() => alert('Not implemented yet')}>정보 변경</button>
 
             <button onClick = { onClickOrderList }>주문 내역</button>
 
             <button onClick = { onClickMyBasket }>장바구니</button>
 
-            <button>My QnA</button>
+            <button onClick = {() => alert('Not implemented yet')}>My QnA</button>
         </div>
         </div>
     );

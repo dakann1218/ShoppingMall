@@ -32,7 +32,7 @@ class ItemPage extends Component< (Props & RouteComponentProps<UrlProps>), State
 		category: this.props.match.params.category,
 		number: this.props.match.params.number,
 		Size: '',
-		Color: '',
+		Color: ''
 	}
 	
 	
@@ -58,6 +58,10 @@ class ItemPage extends Component< (Props & RouteComponentProps<UrlProps>), State
 	
 	onClickLike = () =>{
 		const id = window.sessionStorage.getItem('id');
+		const liked = window.sessionStorage.getItem('liked');
+		const liked_list: string[] = (liked === null? []: liked.split(','));
+		const name = this.state.category + this.state.number;
+		
 		if (id === null){
 			alert('Please log in to like it')
 		}else{
@@ -65,8 +69,12 @@ class ItemPage extends Component< (Props & RouteComponentProps<UrlProps>), State
 			.then(res => {
 				if (res.data.liked){
 					this.setState({likeimg: require('../items/like.PNG').default});
+					liked_list.push(name);
+					window.sessionStorage.setItem('liked', String(liked_list));
 				}else{
 					this.setState({likeimg: require('../items/like_gray.png').default});
+					liked_list.splice(liked_list.indexOf(name),1);
+					window.sessionStorage.setItem('liked', String(liked_list));
 				}		
 			})
 			.catch(err => alert('Error'));
@@ -75,6 +83,10 @@ class ItemPage extends Component< (Props & RouteComponentProps<UrlProps>), State
 	
 	onClickLove = () =>{
 		const id = window.sessionStorage.getItem('id');
+		const loved = window.sessionStorage.getItem('loved');
+		const loved_list: string[] = (loved === null? []: loved.split(','));
+		const name: string = this.state.category + this.state.number;
+		
 		if (id === null){
 			alert('Please log in to love it')
 		}else{
@@ -82,8 +94,12 @@ class ItemPage extends Component< (Props & RouteComponentProps<UrlProps>), State
 			.then(res => {
 				if (res.data.loved){
 					this.setState({loveimg: require('../items/love.PNG').default});
+					loved_list.push(name);
+					window.sessionStorage.setItem('loved', String(loved_list));
 				}else{
 					this.setState({loveimg: require('../items/love_gray.png').default});
+					loved_list.splice(loved_list.indexOf(name),1);
+					window.sessionStorage.setItem('loved', String(loved_list));
 				}		
 			})
 			.catch(err => alert('Error'));

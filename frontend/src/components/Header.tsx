@@ -24,7 +24,7 @@ function Header(props: Props){
 					<button className='Menu' onClick = {() => history.push('/signin')}>Log in</button>
 					<button className='Menu' onClick = {() => history.push('/signup')}>Sign up</button>
 					<button className='Menu' onClick = {() => history.push('/mypage')}>My Page</button>
-					<button className='Menu' onClick = {() => history.push('/qna')}>QnA</button>
+					<button className='Menu' onClick = {() => alert('Not implemented yet')}>QnA</button>
 				</div>
 			</div>
 		);
@@ -35,7 +35,7 @@ function Header(props: Props){
 				<div className = 'MenuBox'>
 					<button className='Menu' onClick = { onClickSignOut }>Log out</button>
 					<button className='Menu' onClick = {() => history.push('/mypage')}>My Page</button>
-					<button className='Menu' onClick = {() => history.push('/qna')}>QnA</button>
+					<button className='Menu' onClick = {() => alert('Not implemented yet')}>QnA</button>
 				</div>
 			</div>
 			);

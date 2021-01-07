@@ -25,10 +25,10 @@ def getLikeLove(request, id = '', category = '', number = 0):
         like = False
         love = False
         for item in Like.objects.all():
-            if item.customer_id == id & item.category == category & item.number == number:
+            if (item.customer_id == id) & (item.category == category) & (item.number == number):
                 like = True
         for item in Love.objects.all():
-            if item.customer_id == id & item.category == category & item.number == number:
+            if (item.customer_id == id) & (item.category == category) & (item.number == number):
                 love = True
         return JsonResponse({'liked': like, 'loved': love }, status = 201)
     else:

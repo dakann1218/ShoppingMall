@@ -26,21 +26,21 @@ class MyBasket extends Component<Props,States>{
 	/* Get basket_list from backend */
 	componentDidMount(){
 		const id = window.sessionStorage.getItem('id');
-		if(id !== null){
+		if(id === null){
+			alert('Please login to see your basket')
+		}else{
 			axios.get(`/api/getBasket/${id}`)
 			.then(res => {
 				this.setState({ basket_list: res.data.basket_list });
 			})
 			.catch(err => alert('Basket Error'));
-		}else{
-			alert('Please login to see your basket')
 		}
 	}
 
 	
 	render(){
 		/* Show loading until api request ends */
-		if ( window.sessionStorage.getItem('id') === null ){
+		if ( window.sessionStorage.getItem('id') === null || this.state.basket_list[0].number === 0 ){
 			return(
 				<div className = 'MyBasket'>
 				</div>
