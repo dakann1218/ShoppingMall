@@ -4,7 +4,7 @@ This is very simple shopping mall that I implemented with React / Django
   
 You should sign up and log in to do things below.
   
-In sign up page, do not fill in informations with privacy as there is no security system in this small project.    
+In sign up page, do not input private informations as there is no security system in this small project.    
 
 1. You can go to '/itempage' by clicking image of an item.  
 
