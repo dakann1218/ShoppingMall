@@ -22,12 +22,15 @@ def getAllLikeLove(request, id = ''):
 
 def getLikeLove(request, id = '', category = '', number = 0):
     if request.method == 'GET':
-        for item in Item.objects.all():
-            if item.category == category:
-                if  item.number == number:
-                    return JsonResponse({'liked': item.liked, 'loved': item.loved}, status = 201)
-        
-        return JsonResponse(status=400)    #no such name
+        like = False
+        love = False
+        for item in Like.objects.all():
+            if item.customer_id == id & item.category == category & item.number == number:
+                like = True
+        for item in Love.objects.all():
+            if item.customer_id == id & item.category == category & item.number == number:
+                love = True
+        return JsonResponse({'liked': like, 'loved': love }, status = 201)
     else:
         return HttpResponseNotAllowed(['GET'])
 

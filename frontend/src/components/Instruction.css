@@ -1,0 +1,56 @@
+.FloatingInstruction{
+	margin: 50px;
+	position: absolute;
+	
+	border-radius: 10px;
+	border: 5px solid brown;
+	background: white;
+	width: 500px;
+	height: 500px;
+	
+	box-shadow: 10px 5px 5px gray;
+}
+
+.FloatingInstruction button{
+	display: block;
+	
+	width: 30px;
+	height: 30px;
+	margin: 10px 0px 0px 460px;
+	
+	background: white;
+	
+	font-weight: bold;
+	
+	border-radius: 5px;
+	border: 3px solid black;
+}
+
+.FloatingInstruction .Content{
+	height: 460px;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	
+}
+
+.FloatingInstruction .Instruction{
+	display: block;
+}
+
+.FloatingInstruction img{
+	width: 100px;
+	height: 100px;
+}
+
+.FloatingInstruction .Arrow{
+	width: 50px;
+	height: 50px;
+	margin: 25px 10px;
+}
+
+.FloatingInstruction h5{
+	font-size: 15px;
+	margin: 0px 0px 70px;
+}

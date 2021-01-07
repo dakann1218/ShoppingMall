@@ -1,11 +1,11 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import { History } from 'history';
 
 import './MainPage.css';
 
 import Banner from '../components/Banner';
 import BestChoice from '../components/BestChoice'
-
+import Instruction from '../components/Instruction'
 
 
 interface Props {
@@ -14,17 +14,18 @@ interface Props {
 
 function MainPage(props: Props){
     const {history} = props;
-
+	
     return(
         <div className = 'MainPage'>
+		
+			{/*Banner*/}
+			<Banner/>
 
-        {/*Banner*/}
-        <Banner/>
+			{/*Best Choice*/}
+			{/*To be changed with .map function*/}
+			<BestChoice history = {history}/>
 
-        {/*Best Choice*/}
-        {/*To be changed with .map function*/}
-        <BestChoice history = {history}/>
-
+			<Instruction/>
         </div>
     );
 }

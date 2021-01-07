@@ -9386,7 +9386,7 @@ react-scripts@4.0.1:
 
 react-slick@^0.27.13:
   version "0.27.13"
-  resolved "https://registry.npmjs.org/react-slick/-/react-slick-0.27.13.tgz"
+  resolved "https://registry.yarnpkg.com/react-slick/-/react-slick-0.27.13.tgz#1fdb60f56b1a08ffbafaa2251924845f1e192230"
   integrity sha512-ZR6rjZEgvU5S/H3YCZtafvxouhwOnfx/FKEXCQJYVnw+DF5WbNhC3vorKhBJ1ebn3bKwnVeM6vBzGD5Oz/LAdQ==
   dependencies:
     classnames "^2.2.5"

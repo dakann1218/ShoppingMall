@@ -12,7 +12,6 @@ interface Props{
 
 interface States{
 	basket_list: basket[];
-	loading: boolean;
 }
 
 type basket = {
@@ -22,7 +21,6 @@ type basket = {
 class MyBasket extends Component<Props,States>{
 	state = {
 		basket_list: [{ 'category': '', 'number': 0 }],
-		loading: true,
 	}
 	
 	/* Get basket_list from backend */
@@ -32,7 +30,6 @@ class MyBasket extends Component<Props,States>{
 			axios.get(`/api/getBasket/${id}`)
 			.then(res => {
 				this.setState({ basket_list: res.data.basket_list });
-				this.setState({ loading: false });
 			})
 			.catch(err => alert('Basket Error'));
 		}else{
@@ -43,10 +40,9 @@ class MyBasket extends Component<Props,States>{
 	
 	render(){
 		/* Show loading until api request ends */
-		if (this.state.loading){
+		if ( window.sessionStorage.getItem('id') === null ){
 			return(
 				<div className = 'MyBasket'>
-					<h1>loading...</h1>
 				</div>
 			);
 		}
