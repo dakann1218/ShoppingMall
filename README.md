@@ -1,6 +1,8 @@
 # ShoppingMall
 --------------------------
 This is very simple shopping mall that I implemented with React / Django  
+
+You can check wireframe of shoppingmall ([Wireframe](https://wireframe.cc/pro/pp/ec4702dde405034, "here")
   
 You should sign up and log in to do things below.
   
