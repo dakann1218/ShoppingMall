@@ -2,7 +2,7 @@
 --------------------------
 This is very simple shopping mall that I implemented with React / Django  
 
-You can check wireframe of shoppingmall https://wireframe.cc/pro/pp/ec4702dde405034
+You can check wireframe of shoppingmall here: https://wireframe.cc/pro/pp/ec4702dde405034
   
 You should sign up and log in to do things below.
   
