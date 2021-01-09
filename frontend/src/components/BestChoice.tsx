@@ -23,7 +23,6 @@ function BestChoice(props: Props){
 		const categories: string[] = ['neat', 'sweatshirt', 'coat'];
 		const category: string = categories[Math.floor(Math.random() * categories.length)];
 		const number: number = 1 + Math.floor(Math.random() * 39);
-		/* Check if there is duplicate image */
 		imagelist.push({ 'category': category, 'number': number });
 	}
 

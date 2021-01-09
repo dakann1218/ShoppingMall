@@ -10,9 +10,6 @@ interface Props{
 }
 
 class ItemList extends Component<RouteComponentProps<Props>>{
-    /*const {history, match} = props;
-
-    let imagelist: string[] = [];*/
 	
 	render(){
 		let imagelist: string[] = [];

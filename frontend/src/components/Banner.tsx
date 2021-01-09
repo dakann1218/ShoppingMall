@@ -6,14 +6,6 @@ import './Banner.css'
 
 import banner from '../items/Banner.png';
 
-/* Styled component?
-const StyledSlider = styled(Slider)`
-    .slick-slide div{
-      outline: none;
-    }
-`;
-*/
-
 function Banner(){
     const settings = {
         dots: true,
@@ -23,12 +15,11 @@ function Banner(){
         slidesToScroll: 1,
         arrows: true,
         centerMode: true,
-      };
+	};
 
     return(
         <div className = 'Banner'>  
         <Slider {...settings}>
-            {/*To be changed to .map()*/}
             <div>
             <img src = {banner} alt = ''/>
             </div>

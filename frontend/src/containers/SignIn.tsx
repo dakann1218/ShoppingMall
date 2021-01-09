@@ -16,7 +16,16 @@ function SignIn(props: Props){
 	/*props*/
 	const {history} = props
 
+	/* When clicked sign in ->	1. Check if ID/PW are written properly.
+								2. If ID/PW are not written properly -> do nothing.
+								3. If ID/PW are written properly
+								->	3-1. Send input ID/PW to backend.
+									3-2. Backend checks if ID/PW exists on DB and send message to frontend.
+									3-3. If ID/PW exists, set data in session storage and push to '/main'.
+									3-4. If not, alert message.
+	*/
 	const onClickSignIn = () => {
+		
 		if (ID === ''){
 			alert('Write your ID!');
 		}
@@ -42,6 +51,7 @@ function SignIn(props: Props){
 			})
 			.catch((err) => alert('Sign in error'))
 		}
+		
 	}
 	
 	
@@ -73,11 +83,11 @@ function SignIn(props: Props){
 				<button	className = 'SignIn' onClick = { onClickSignIn }>
 					Sign in
 				</button>
-
 				<button className = 'SignUp' onClick = {() => history.push('/signup')}>
 					Sign up
 				</button>
 			</div>
+			
         </div>
     );
 }

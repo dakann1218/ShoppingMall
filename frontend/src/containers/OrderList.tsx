@@ -11,6 +11,11 @@ function OrderList(){
 	const [address, setAddress] = useState('');
 	const [orders, setOrders] = useState([]);
 	
+	/* 	1. Check if a user is logged in.
+		2. If not, alert message.
+		3. If logged in, send HTTP request to backend and get order list.
+		4. Map order list into HTML + CSS.
+	*/
 	useEffect(() => {
 		const id = window.sessionStorage.getItem('id');
 		
@@ -36,6 +41,7 @@ function OrderList(){
 			})
 			.catch((err) => alert('Order list loading error'));
 		}
+		
 	},[]);
 	
 	

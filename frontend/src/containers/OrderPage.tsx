@@ -22,7 +22,12 @@ function OrderPage(props: (Props & RouteComponentProps<MatchProps>)){
 	const { history, match } = props;
 	const [address, setAddress] = useState('');
 	
-	
+	/* When clicked 'Buy' ->	1. Check session storage to find out if a user is logged in.
+								2. If not, alert message.
+								3. If logged in, check if address is written properly.
+								4. If not, alert message.
+								5. If written properly, send HTTP request to backend and push to orderlist.
+	*/
 	const onClickBuy = () => {
 		const id = window.sessionStorage.getItem('id');
 		
@@ -35,7 +40,7 @@ function OrderPage(props: (Props & RouteComponentProps<MatchProps>)){
 				axios.post('/api/addOrder', { 'id': id, 'category': match.params.category, 'number': Number(match.params.number), 'size': match.params.size, 'color': match.params.color, 'address': address })
 				.then((res) => null)
 				.catch((err) => alert('Buy Error'))
-				/* Wait until response with middleware? */
+				/* ?Wait until response with middleware? */
 				history.push('/orderlist');
 			}
 		}

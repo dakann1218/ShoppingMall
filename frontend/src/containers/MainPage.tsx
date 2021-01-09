@@ -17,15 +17,13 @@ function MainPage(props: Props){
 	
     return(
         <div className = 'MainPage'>
-		
-			{/*Banner*/}
+			
 			<Banner/>
-
-			{/*Best Choice*/}
-			{/*To be changed with .map function*/}
+			
 			<BestChoice history = {history}/>
 
 			<Instruction/>
+			
         </div>
     );
 }

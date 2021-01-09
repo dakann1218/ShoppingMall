@@ -28,16 +28,16 @@ function MyPage(props: Props){
 	
     return(
         <div className = 'MyPage'>                
-        <h1>My page</h1>
-        <div className = 'Buttons'>
-            <button onClick = {() => alert('Not implemented yet')}>정보 변경</button>
+			<h1>My page</h1>
+			<div className = 'Buttons'>
+				<button onClick = {() => alert('Not implemented yet')}>정보 변경</button>
 
-            <button onClick = { onClickOrderList }>주문 내역</button>
+				<button onClick = { onClickOrderList }>주문 내역</button>
 
-            <button onClick = { onClickMyBasket }>장바구니</button>
+				<button onClick = { onClickMyBasket }>장바구니</button>
 
-            <button onClick = {() => alert('Not implemented yet')}>My QnA</button>
-        </div>
+				<button onClick = {() => alert('Not implemented yet')}>My QnA</button>
+			</div>
         </div>
     );
 }

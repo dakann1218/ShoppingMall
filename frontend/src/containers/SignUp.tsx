@@ -17,10 +17,15 @@ function SignUp(props: Props){
     /*props*/
     const {history} = props;
     
+	/* When clicked sign up ->	1. Check if Email/Address/ID/PW are written properly.
+								2. If not written properly, do nothing.
+								3. If written properly, send HTTP request to backend and get message.
+								4. If duplicate ID, alert message.
+								5. If not duplicate, push to '/sign in'.
+	*/
 	const onClickSignUp = () =>{
 		if(Email === ''){
 			alert('Write your email!');
-			
 		}
 		else if(Address === ''){
 			alert('Write your address!');

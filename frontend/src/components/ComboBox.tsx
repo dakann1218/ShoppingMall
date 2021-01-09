@@ -21,12 +21,12 @@ function ComboBox(props: Props) {
 	return (
 		<div className = 'ComboBox'>
 			<label>{label}</label>
-			<select onChange = {(e) => onChangeBox(e.target.value)} id="pet-select">
+			<select onChange = {(e) => onChangeBox(e.target.value)}>
 				<option value = {placeholder}>{placeholder}</option>
 				{options}
 			</select>
 		</div>
-	  )
+	);
 }
 
 export default ComboBox;

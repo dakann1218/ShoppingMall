@@ -38,7 +38,7 @@ function Header(props: Props){
 					<button className='Menu' onClick = {() => alert('Not implemented yet')}>QnA</button>
 				</div>
 			</div>
-			);
+		);
 	}
 }
 
