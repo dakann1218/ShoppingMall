@@ -33,11 +33,12 @@ function Item(props: Props){
 		const likelist: string | null = window.sessionStorage.getItem('liked');
 		const lovelist: string | null = window.sessionStorage.getItem('loved');
 		if (likelist !== null && lovelist !== null){
-			if (likelist.indexOf( name ) >= 0){
+			if (likelist.split(',').indexOf( name ) >= 0){
 				setLikeImg( require('../items/like.PNG').default );
 			}
-			if (lovelist.indexOf( name ) >= 0){
+			if (lovelist.split(',').indexOf( name ) >= 0){
 				setLoveImg( require('../items/love.PNG').default );
+				console.log(category + String(number));
 			}
 		}
 	},[])
