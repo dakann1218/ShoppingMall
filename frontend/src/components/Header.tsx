@@ -35,7 +35,7 @@ function Header(props: Props){
 				<div className = 'MenuBox'>
 					<button className='Menu' onClick = { onClickSignOut }>Log out</button>
 					<button className='Menu' onClick = {() => history.push('/mypage')}>My Page</button>
-					<button className='Menu' onClick = {() => alert('Not implemented yet')}>QnA</button>
+					<button className='Menu' onClick = {() => history.push('/qna')}>QnA</button>
 				</div>
 			</div>
 		);

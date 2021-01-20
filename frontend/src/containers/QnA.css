@@ -1,0 +1,51 @@
+.QnA{
+	display: flex;
+	width: 1980px;
+	height: 1000px;
+}
+
+.QnA .Left{
+	flex: 1;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	
+	height: 800px;
+	margin: 50px;
+	background: white;
+}
+
+.QnA .Refresh{
+	position: absolute;
+	margin: 10px 0px 0px 790px;
+}
+
+.QnA .Left .NewQnA{
+	flex: 1;
+	width: 740px;
+	margin: 10px 50px 50px;
+	background: pink;
+}
+
+
+.QnA .Right{
+	flex: 1;
+	height: 800px;
+	margin: 50px;
+	padding: 10px;
+	border: 5px solid black;
+	background: white;
+}
+
+.QnA .Right .QnA_Title{
+	margin: 10px auto;
+}
+
+.QnA .Right .QnA_Content{
+	margin: 10px auto;
+}
+
+.QnA .Instruction{
+	position: absolute;
+	margin: 0px 0px 0px 850px;
+}

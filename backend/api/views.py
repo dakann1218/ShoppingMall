@@ -1,7 +1,7 @@
 from django.shortcuts import render
 from django.http import HttpResponse, HttpResponseNotAllowed, JsonResponse
 import json
-from .models import Item, Love, Like, OrderList, Customer
+from .models import Item, Love, Like, OrderList, Customer, QnA
 
 def index(request):
     return HttpResponse('Hello, world!')
@@ -133,8 +133,46 @@ def signUp(request):
     else:
         return HttpResponseNotAllowed(['POST'])
         
+def addQnA(request):
+    if request.method == 'POST':
+        body = json.loads(request.body.decode())
+        id = body['id']
+        title = body['title']
+        content = body['content']
         
+        qna = QnA(customer_id = id, title = title, content = content)
+        qna.save()
+        return HttpResponse(status = 201)
+    else:
+        return HttpResponseNotAllowed(['POST']);
+    
+def getQnA(request):
+    if request.method == 'GET':
+        qna_list = [];
+        for qna in QnA.objects.all():
+            qna_list.append({ 'id': qna.customer_id, 'title': qna.title, 'content': qna.content })
+        return JsonResponse({'qna_list': qna_list}, status = 201)
+            
+    else:
+        return HttpResponseNotAllowed(['GET'])
+    
+def deleteQnA(request,):
+    if request.method == 'DELETE':
+        body = json.loads(request.body.decode())
+        print(body)
+        id = body['id']
+        title = body['title']
+        content = body['content']
         
+        for qna in QnA.objects.all():
+            if (qna.customer_id == id) & (qna.title == title) & (qna.content == content):
+                qna.delete()
+                return HttpResponse(status = 201)
+        return HttpResponse(status = 202)
+    else:
+        return HttpResponseNotAllowed(['DELETE'])
+    
+    
     
     
     

@@ -37,3 +37,8 @@ class Customer(models.Model):
     customer_pw = models.TextField()
     customer_email = models.TextField()
     customer_address = models.TextField()
+    
+class QnA(models.Model):
+    customer_id = models.TextField()
+    title = models.TextField()
+    content = models.TextField()

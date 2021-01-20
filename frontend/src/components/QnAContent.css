@@ -1,0 +1,17 @@
+.QnAContent{
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	
+}
+
+.QnAContent .Title{
+	margin: 0px 0px 20px 0px;
+	width: 600px;
+}
+
+.QnAContent .Content{
+	margin: 0px 0px 20px 0px;
+	width: 600px;
+	height: 600px;
+}

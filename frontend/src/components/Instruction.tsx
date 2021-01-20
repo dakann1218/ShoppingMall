@@ -26,6 +26,9 @@ function Instruction(){
 					<img src = {require('../items/like.PNG').default} alt = ''></img>
 				</div>
 				<h5>You can click 'like' to turn it on. It actually has no function yet.</h5>
+				<div className = 'Instruction'>
+					<h5>{'You can use <ID: JaeJoon PW:1234> for testing.'}</h5>
+				</div>
 			</div>
 		</div>
 		) : []

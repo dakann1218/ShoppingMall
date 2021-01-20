@@ -12,4 +12,7 @@ urlpatterns =[
     path('signIn/<str:id>/<str:pw>', views.signIn, name = 'signIn'),
     path('signUp', views.signUp, name = 'signUp'),
     path('getAllLikeLove/<str:id>', views.getAllLikeLove, name = 'getAllLikeLove'),
+    path('addQnA/', views.addQnA, name = 'addQnA'),
+    path('getQnA/', views.getQnA, name = 'getQnA'),
+    path('deleteQnA/', views.deleteQnA, name = 'deleteQnA')
 ]
