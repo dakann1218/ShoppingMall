@@ -29,7 +29,8 @@ function BestChoice(props: Props){
 	/* Make Bestchoice from the list */
 	var count: number = 0;
 	let rowlist: JSX.Element[];
-	const bestchoice = imagelist.map((dict) => {
+	const bestchoice: JSX.Element[] = []
+	imagelist.forEach((dict, index) => {
 		if(count % 3 === 0 ){
 			rowlist = []
 		}
@@ -41,12 +42,13 @@ function BestChoice(props: Props){
 				image = { require(`../items/${dict.category}/${dict.number}.jpg`).default }
 				category = { dict.category }
 				number = { dict.number }
+				key = { count }
 				/>
         );
 		
 		if(count % 3 === 0){        
-			return(
-				<div className = 'Row'>
+			bestchoice.push(
+				<div className = 'Row' key = { index }>
 					{rowlist} 
 				</div>
 			);
