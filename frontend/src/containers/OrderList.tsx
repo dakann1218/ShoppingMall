@@ -8,7 +8,6 @@ type OrderType ={
 }
 
 function OrderList(){
-	const [address, setAddress] = useState('');
 	const [orders, setOrders] = useState([]);
 	
 	/* 	1. Check if a user is logged in.
@@ -24,11 +23,10 @@ function OrderList(){
 		}else{
 			axios.get(`/api/getOrder/${id}`)
 			.then(res => {
-				setOrders(res.data.order_list.map((order: OrderType) =>{
-					setAddress(order.address);
+				setOrders(res.data.order_list.map((order: OrderType, index: number) =>{
 					return(
-						<div className = 'OrderBox'>
-							<img src = {require(`../items/${order.category}/${order.number}.jpg`).default}/>
+						<div className = 'OrderBox' key = { index }>
+							<img src = {require(`../items/${order.category}/${order.number}.jpg`).default} alt = ''/>
 							<div className = 'Info'>
 								<h1>{ 'Item: ' + order.category + String(order.number) }</h1>
 								<h1>{ 'Size: ' + order.size }</h1>

@@ -12,9 +12,9 @@ interface Props{
 function ComboBox(props: Props) {
 	const { label, placeholder, items, onChangeBox } = props;
 	
-	const options = items.map((item) => {
+	const options = items.map((item, index) => {
 		return(
-			<option value = {item}>{item}</option>
+			<option key = { index } value = {item}>{item}</option>
 		);
 	});
 	

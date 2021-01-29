@@ -1,5 +1,4 @@
 import React, { useState, useEffect } from 'react';
-import { Link }  from 'react-router-dom';
 import { History } from 'history';
 import axios from 'axios';
 
@@ -13,11 +12,6 @@ interface Props{
 	number: number;
 }
 
-interface States{
-	name: string;
-	likeimg: string;
-	loveimg: string;
-}
 
 function Item(props: Props){
 	/* props */
@@ -38,7 +32,6 @@ function Item(props: Props){
 			}
 			if (lovelist.split(',').indexOf( name ) >= 0){
 				setLoveImg( require('../items/love.PNG').default );
-				console.log(category + String(number));
 			}
 		}
 	},[])

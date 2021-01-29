@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React from 'react';
 import { RouteComponentProps } from 'react-router';
 import { History } from 'history';
 import Item from '../components/Item';
@@ -35,7 +35,7 @@ function ItemList( props: Props & RouteComponentProps<URLProps> ){
 	/* Map imagelist to HTML of 4 column image table */
 	var count2: number = 0;
 	let rowlist: JSX.Element[];
-	const images = imagelist.map((image) =>{
+	const images = imagelist.map((image, index) =>{
 		if(count2 % 4 === 0 ){
 			rowlist = []
 		}
@@ -47,12 +47,13 @@ function ItemList( props: Props & RouteComponentProps<URLProps> ){
 				 image = { image }
 				 category = { itemclass }
 				 number = {count2}
+				 key = { index }
 				 />
 		);
 
 		if((count2 % 4 === 0) || (count2 === count-1)){        
 			return(
-				<div className = 'Row'>
+				<div className = 'Row' key = { index }>
 					{rowlist} 
 				</div>
 			);

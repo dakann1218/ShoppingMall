@@ -10,14 +10,6 @@ interface Props{
 	history: History;	
 }
 
-interface States{
-	basket_list: basket[];
-}
-
-type basket = {
-	[key: string]: string | number ,
-}
-
 function MyBasket(props: Props){
 	/* props */
 	const { history } = props;
@@ -53,7 +45,7 @@ function MyBasket(props: Props){
 	/* Map <Item/> component from basket_list */
 	var count: number = 0;
 	let rowlist: JSX.Element[];
-	const basket = basket_list.map((dict) => {
+	const basket = basket_list.map((dict, index) => {
 		if(count % 4 === 0 ){
 			rowlist = []
 		}
@@ -61,6 +53,7 @@ function MyBasket(props: Props){
 
 		rowlist.push(
 			<Item
+				key = { index }
 				history = { history }
 				image = { require(`../items/${dict.category}/${dict.number}.jpg`).default }
 				category = {dict.category}
@@ -70,7 +63,7 @@ function MyBasket(props: Props){
 
 		if((count % 4 === 0) || (count === basket_list.length)){        
 			return(
-				<div className = 'Row'>
+				<div className = 'Row' key = { index }>
 					{rowlist} 
 				</div>
 			);
