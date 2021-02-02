@@ -23,7 +23,7 @@
 
 .MyPage button{
     flex: 1;
-    background: white;
+    background: cornsilk;
     margin: 10px;
 
     border: 3px solid black;
@@ -33,3 +33,15 @@
     font-size: 40px;
     font-weight: bold;
 }
+
+.MyPage button:hover{
+	transform: scale(1.05);
+	animation: ani 1s normal 1 forwards;
+}
+
+@keyframes ani{
+	0%{background: cornsilk}
+	100%{background: white}
+}
+
+

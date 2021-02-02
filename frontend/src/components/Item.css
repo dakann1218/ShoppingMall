@@ -7,6 +7,10 @@
     background: azure;
 }
 
+.Item:hover{
+	transform: scale(1.2);
+}
+
 .Item img{
     margin: 0px;
     width: 300px;
@@ -26,8 +30,16 @@
     height: 25px;
 }
 
+.Item .Like:hover{
+	transform: scale(1.2);
+}
+
 .Item .Love{
     margin: 5px 0px;
     width: 25px;
     height: 25px;
+}
+
+.Item .Love:hover{
+	transform: scale(1.2);
 }

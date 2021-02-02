@@ -280,3 +280,13 @@ Not Found: /itemlist/babel/parser/lib/index.js
 [29/Jan/2021 05:10:07] "GET /api/getLikeLove/JaeJoon/sweatshirt/2 HTTP/1.1" 201 31
 [29/Jan/2021 05:10:16] "POST /api/addOrder HTTP/1.1" 201 0
 [29/Jan/2021 05:10:16] "GET /api/getOrder/JaeJoon HTTP/1.1" 201 375
+[01/Feb/2021 15:53:33] "GET /api/signIn/JaeJoon/1234 HTTP/1.1" 201 23
+[01/Feb/2021 15:53:33] "GET /api/getAllLikeLove/JaeJoon HTTP/1.1" 201 284
+[01/Feb/2021 15:53:38] "POST /api/changeLike/ HTTP/1.1" 201 15
+[01/Feb/2021 15:53:40] "POST /api/changeLike/ HTTP/1.1" 201 16
+[01/Feb/2021 15:53:42] "POST /api/changeLove/ HTTP/1.1" 201 15
+[01/Feb/2021 15:53:43] "POST /api/changeLove/ HTTP/1.1" 201 16
+[01/Feb/2021 15:53:45] "POST /api/changeLove/ HTTP/1.1" 201 15
+[01/Feb/2021 15:53:58] "GET /api/getBasket/JaeJoon HTTP/1.1" 201 527
+Not Found: /main
+[02/Feb/2021 09:17:14] "GET /main HTTP/1.1" 404 2074
