@@ -1,21 +1,56 @@
 .Banner {
-    width: 1400px;
-    height: 300px;
-    margin: 100px 20px 10px;
-
-    text-align: center;
-
-    background: darksalmon;
-
+	display:flex;
+	flex-direction: column;
+	margin: 50px 0px 0px;
+	width: 750px;
+    height: 500px;
+	overflow: hidden;
 }
 
 .Banner .slick-slide div{
     outline:none;
-
 }
 
 .Banner img{
-    width: 300px;
-    height: 300px;
-    margin: 0px auto;
+	height: 300px;
+	width: 250px;
+	border-radius: 5px;
+}
+
+.Banner .Container{
+	height: 80%;
+	width: 1500px;
+	display: flex;
+	justify-content: space-around;
+	align-items: center;
+}
+
+.Banner h1{
+	text-align:center;
+	color: black;
+	background: white;
+	font-size: 15px;
+	border-radius: 20px;
+	border: 2px solid coral;
+	width: 40px;
+	margin: 10px auto;
+}
+
+.Banner .Buttons{
+	display:flex;
+	justify-content: center;
+}
+
+.Banner button{
+	margin: 0px 5px;
+	border: 1px solid coral;
+	padding: 0.5em 2em;
+	color: coral;
+	border-radius: 10px;
+}
+
+.Banner button:hover{
+	transition: all 0.3s ease-in-out;
+	background: coral;
+	color: white;
 }

@@ -290,3 +290,52 @@ Not Found: /itemlist/babel/parser/lib/index.js
 [01/Feb/2021 15:53:58] "GET /api/getBasket/JaeJoon HTTP/1.1" 201 527
 Not Found: /main
 [02/Feb/2021 09:17:14] "GET /main HTTP/1.1" 404 2074
+[03/Feb/2021 04:09:26] "GET /api/getQnA/ HTTP/1.1" 201 162
+Not Found: /babel/parser/lib/index.js
+[03/Feb/2021 05:17:51] "GET /babel/parser/lib/index.js HTTP/1.1" 404 2137
+Not Found: /babel/parser/lib/index.js
+[03/Feb/2021 14:57:52] "GET /babel/parser/lib/index.js HTTP/1.1" 404 2137
+Not Found: /babel/parser/lib/index.js
+[03/Feb/2021 15:10:41] "GET /babel/parser/lib/index.js HTTP/1.1" 404 2137
+Not Found: /babel/parser/lib/index.js
+[03/Feb/2021 15:21:30] "GET /babel/parser/lib/index.js HTTP/1.1" 404 2137
+Not Found: /img2
+[03/Feb/2021 15:21:30] "GET /img2 HTTP/1.1" 404 2074
+Not Found: /img4
+Not Found: /img1
+[03/Feb/2021 15:21:30] "GET /img1 HTTP/1.1" 404 2074
+[03/Feb/2021 15:21:30] "GET /img4 HTTP/1.1" 404 2074
+Not Found: /img3
+[03/Feb/2021 15:21:30] "GET /img3 HTTP/1.1" 404 2074
+Not Found: /img5
+Not Found: /img6
+[03/Feb/2021 15:21:30] "GET /img6 HTTP/1.1" 404 2074
+[03/Feb/2021 15:21:30] "GET /img5 HTTP/1.1" 404 2074
+Not Found: /img1
+[03/Feb/2021 15:22:13] "GET /img1 HTTP/1.1" 404 2074
+Not Found: /img4
+[03/Feb/2021 15:22:13] "GET /img4 HTTP/1.1" 404 2074
+Not Found: /img2
+[03/Feb/2021 15:22:13] "GET /img2 HTTP/1.1" 404 2074
+Not Found: /img3
+[03/Feb/2021 15:22:13] "GET /img3 HTTP/1.1" 404 2074
+Not Found: /img6
+[03/Feb/2021 15:22:13] "GET /img6 HTTP/1.1" 404 2074
+Not Found: /img5
+[03/Feb/2021 15:22:13] "GET /img5 HTTP/1.1" 404 2074
+Not Found: /babel/parser/lib/index.js
+[03/Feb/2021 15:24:55] "GET /babel/parser/lib/index.js HTTP/1.1" 404 2137
+Not Found: /babel/parser/lib/index.js
+[03/Feb/2021 15:35:36] "GET /babel/parser/lib/index.js HTTP/1.1" 404 2137
+Not Found: /babel/parser/lib/index.js
+[03/Feb/2021 16:03:51] "GET /babel/parser/lib/index.js HTTP/1.1" 404 2137
+Not Found: /babel/parser/lib/index.js
+[03/Feb/2021 17:15:29] "GET /babel/parser/lib/index.js HTTP/1.1" 404 2137
+Not Found: /babel/parser/lib/index.js
+[03/Feb/2021 17:15:30] "GET /babel/parser/lib/index.js HTTP/1.1" 404 2137
+Not Found: /babel/parser/lib/index.js
+[03/Feb/2021 17:15:30] "GET /babel/parser/lib/index.js HTTP/1.1" 404 2137
+Not Found: /babel/parser/lib/index.js
+[03/Feb/2021 18:22:51] "GET /babel/parser/lib/index.js HTTP/1.1" 404 2137
+Not Found: /babel/parser/lib/index.js
+[03/Feb/2021 18:41:53] "GET /babel/parser/lib/index.js HTTP/1.1" 404 2137

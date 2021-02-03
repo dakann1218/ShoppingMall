@@ -9,7 +9,6 @@ interface Props{
 
 function QnAList(props: Props){
 	const { qna_list, onClickQnA } = props;
-	
 	const qnas: JSX.Element[] = qna_list.map((dict) => {
 		return (
 			<button className = 'Row' onClick = { () => onClickQnA(dict) }>{dict.title}</button>

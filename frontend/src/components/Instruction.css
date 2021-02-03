@@ -1,7 +1,7 @@
 .FloatingInstruction{
 	margin: 50px;
 	position: absolute;
-	
+	z-index: 2;
 	border-radius: 10px;
 	border: 5px solid brown;
 	background: white;
