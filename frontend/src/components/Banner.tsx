@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useRef } from 'react';
+import React, { useState, useEffect } from 'react';
 import styled from 'styled-components';
 import './Banner.css'
 
@@ -25,8 +25,6 @@ const TOTAL_SLIDES = 5;
 function Banner(){
     const [currentSlide, setCurrentSlide] = useState(0);
 	const [img_arr, setImgArr] = useState([6,1,2,3,4,5]);
-	const slideRef = useRef<any>(null);
-	const image_list = useRef<any>()
 	
 	useEffect(() =>{
 	}, [currentSlide]);
@@ -57,7 +55,7 @@ function Banner(){
 	
     return(
         <div className = 'Banner'>
-			<div className = 'Container' ref={slideRef}>
+			<div className = 'Container'>
 			  {img_list}
 			</div>
 			<div>
